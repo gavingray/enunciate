@@ -81,6 +81,7 @@ public class Enunciate {
   private boolean javacCheck = false;
   private boolean compileDebugInfo = true;
   private String encoding;
+  private String poo;
 
   private File configFile;
   private File generateDir;
@@ -852,6 +853,7 @@ public class Enunciate {
    * @throws EnunciateException if the compile fails.
    */
   public void invokeJavac(String classpath, File compileDir, String[] sourceFiles) throws EnunciateException {
+      info("Poo parameter is set to '" + this.poo + "'!");
     invokeJavac(classpath, "1.5", compileDir, new ArrayList<String>(), sourceFiles);
   }
 
@@ -1545,6 +1547,10 @@ public class Enunciate {
   public void setTarget(Target target) {
     this.target = target;
   }
+
+    public void setPoo(String poo) {
+	this.poo = poo;
+    }
 
   /**
    * Set a property value.

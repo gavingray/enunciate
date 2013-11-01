@@ -193,6 +193,15 @@ public class ConfigMojo extends AbstractMojo {
    */
   private String gwtHome = null;
 
+  private static final String POO_DEFAULT = "moo";
+
+  /**
+   * The poo parameter.
+   *
+   * @parameter
+   */
+  private String poo = POO_DEFAULT;
+
   /**
    * The Flex home.
    *
@@ -377,6 +386,9 @@ public class ConfigMojo extends AbstractMojo {
     }
     enunciate.setBuildClasspath(classpath.toString());
 
+    if (!this.poo.equals(POO_DEFAULT)) {
+	enunciate.setPoo(this.poo);
+    }
 
     if (this.generateDir != null) {
       enunciate.setGenerateDir(this.generateDir);
